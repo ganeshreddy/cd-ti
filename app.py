@@ -34,7 +34,9 @@ def makeWebhookResult(req):
     parameters = result.get("parameters")
     zone = parameters.get("shipping-zone")
 
-    cost = {'Large Conference Room':'Conference Room 27NA, Conference Room 27S', 'Desk':'27D69, 27A23, 27D14'}
+    cost = {'Large Conference Room':'Conference Room 27NA, Conference Room 27S, Conference Rm 28NA, Conference Rm 28', 
+            'Desk':'27D69, 27A23, 27D14',
+           'Edit Room':'E-5A, E-6A, E-6C'}
 
     speech = "Available " + zone + " are " + str(cost[zone]) + "."
 
