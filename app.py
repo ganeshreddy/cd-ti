@@ -28,11 +28,11 @@ def webhook():
     return r
 
 def makeWebhookResult(req):
-    if req.get("result").get("action") != "shipping.cost":
+    if req.get("result").get("action") != "booking.cost":
         return {}
     result = req.get("result")
     parameters = result.get("parameters")
-    zone = parameters.get("shipping-zone")
+    zone = parameters.get("room-zone")
 
     cost = {'Large Conference Room':'Conference Room 27NA, Conference Room 27S, Conference Rm 28NA, Conference Rm 28', 
             'Conference Room':'Conference Room 27NA, Conference Room 27NB, Conference Room 27S, Conference Rm 28NA, Conference Rm 28',
