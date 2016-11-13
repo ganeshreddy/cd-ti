@@ -34,9 +34,10 @@ def makeWebhookResult(req):
     parameters = result.get("parameters")
     zone = parameters.get("RoomType")
 
-    availability = {'Desk':'Available', 'Conference Room 27NA':'Available', 'Conference Room 27S':'Available', 'Room 27C45':'Available', 'Room 27C47':'Available', 'Room 27A22':'Available', 'Room 27B13':'Available'}
+ #   availability = {'Desk':'Available', 'Conference Room 27NA':'Available', 'Conference Room 27S':'Available', 'Room 27C45':'Available', 'Room 27C47':'Available', 'Room 27A22':'Available', 'Room 27B13':'Available'}
+     availability = {'Available':'Conference Room 27NA, Conference Room 27S, Desk 27C45, Desk 27C47, Desk 27A22'}
 
-    speech = "Rooms available are " + zone + " is " + str(availability[zone]) + "."
+    speech = "Rooms available are " + str(availability[zone]) + "."
 
     print("Response:")
     print(speech)
