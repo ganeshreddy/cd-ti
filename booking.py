@@ -34,8 +34,8 @@ def makeWebhookResult(req):
     parameters = result.get("parameters")
     zone = parameters.get("room-zone")
 
- #   availability = {'Desk':'Available', 'Conference Room 27NA':'Available', 'Conference Room 27S':'Available', 'Room 27C45':'Available', 'Room 27C47':'Available', 'Room 27A22':'Available', 'Room 27B13':'Available'}
-     availability = {'Large Conference Room':'Room 27NA, Room 27S', 'Desks':'Desk 27C45, Desk 27C47, Desk 27A22', 'Small Conference Room':'Room 27NB, Room 28NB', 'Edit Room':'Room 1A'}
+    availability = {'Desk':'Available', 'Conference Room 27NA':'Available', 'Conference Room 27S':'Available', 'Room 27C45':'Available', 'Room 27C47':'Available', 'Room 27A22':'Available', 'Room 27B13':'Available'}
+ #    availability = {'Large Conference Room':'Room 27NA, Room 27S', 'Desks':'Desk 27C45, Desk 27C47, Desk 27A22', 'Small Conference Room':'Room 27NB, Room 28NB', 'Edit Room':'Room 1A'}
 
     speech = zone + "'s available are " + str(availability[zone]) + "."
 
