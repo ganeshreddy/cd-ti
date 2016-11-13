@@ -28,15 +28,15 @@ def webhook():
     return r
 
 def makeWebhookResult(req):
-    if req.get("result").get("action") != "shipping.cost":
+    if req.get("result").get("action") != "room.availability":
         return {}
     result = req.get("result")
     parameters = result.get("parameters")
-    zone = parameters.get("shipping-zone")
+    zone = parameters.get("RoomType")
 
-    cost = {'Europe':150, 'North America':250, 'South America':350, 'Asia':150, 'Africa':550}
+    availability = {'Conference Room 27NA':'Available', 'Conference Room 27S':'Available', 'Room 27C45':'Available', 'Room 27C47':'Available', 'Room 27A22':'Available', 'Room 27B13':'Available'}
 
-    speech = "The cost of shipping to " + zone + " is " + str(cost[zone]) + " euros."
+    speech = "Rooms available are " + zone + " is " + str(availability[zone]) + "."
 
     print("Response:")
     print(speech)
@@ -46,7 +46,7 @@ def makeWebhookResult(req):
         "displayText": speech,
         #"data": {},
         # "contextOut": [],
-        "source": "apiai-onlinestore-shipping"
+        "source": "apiai-EchoProject-Availability"
     }
 
 
