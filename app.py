@@ -35,6 +35,8 @@ def makeWebhookResult(req):
     zone = parameters.get("shipping-zone")
 
     cost = {'Large Conference Room':'Conference Room 27NA, Conference Room 27S, Conference Rm 28NA, Conference Rm 28', 
+            'Conference Room':'Conference Room 27NA, Conference Room 27NB, Conference Room 27S, Conference Rm 28NA, Conference Rm 28',
+            'Small Conference Room':'Conference Room 27NB, Conference Room 28NB', 
             'Desk':'27D69, 27A23, 27D14',
            'Edit Room':'E-5A, E-6A, E-6C'}
 
