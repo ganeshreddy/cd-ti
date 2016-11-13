@@ -28,7 +28,7 @@ def webhook():
     return r
 
 def makeWebhookResult(req):
-    if req.get("result").get("action") != "booking.cost":
+    if req.get("result").get("action") != "room.booking":
         return {}
     result = req.get("result")
     parameters = result.get("parameters")
