@@ -38,7 +38,7 @@ def makeWebhookResult(req):
      availability = {'Large Conference Rooms':'Room 27NA, Room 27S', 'Desk':'Desk 27C45, Desk 27C47, Desk 27A22', 
                     'Small Conference Rooms':'Room 27NB, Room 28NB', 'Editing Rooms':'Room 1A, Room 2c',}
 
-    speech = "Rooms available are " + str(availability[zone]) + "."
+    speech = zone + "'s available are " + str(availability[zone]) + "."
 
     print("Response:")
     print(speech)
