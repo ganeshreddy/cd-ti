@@ -1,0 +1,51 @@
+{
+  "id": "ed9969f1-2e60-4a5d-8bfb-d520bc29aaf4",
+  "name": "room-zone",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "Large Conference Room",
+      "synonyms": [
+        "Large Conference Room",
+        "rooms",
+        "large room"
+      ]
+    },
+    {
+      "value": "Small Conference Room",
+      "synonyms": [
+        "Small Conference Room",
+        "rooms",
+        "small room"
+      ]
+    },
+    {
+      "value": "Desk",
+      "synonyms": [
+        "Desk"
+      ]
+    },
+    {
+      "value": "Edit Room",
+      "synonyms": [
+        "Edit Room"
+      ]
+    },
+    {
+      "value": "Conference Room",
+      "synonyms": [
+        "Conference Room",
+        "conference"
+      ]
+    },
+    {
+      "value": "rooms",
+      "synonyms": [
+        "rooms",
+        "room"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": false
+}

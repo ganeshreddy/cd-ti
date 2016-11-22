@@ -1,0 +1,118 @@
+{
+  "id": "acfc456a-408b-4c53-b1b4-918fea18ee59",
+  "name": "Roombooking",
+  "auto": true,
+  "contexts": [],
+  "userSays": [
+    {
+      "id": "4010ace2-502b-4798-9929-09631bdcfbbe",
+      "data": [
+        {
+          "text": "available "
+        },
+        {
+          "text": "rooms",
+          "alias": "room-zone",
+          "meta": "@room-zone",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "e9b1aa1c-2658-4d03-a8b0-65b618d40d1d",
+      "data": [
+        {
+          "text": "available "
+        },
+        {
+          "text": "desks",
+          "alias": "room-zone",
+          "meta": "@room-zone",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 1
+    },
+    {
+      "id": "4dad6c5d-3ac5-4c4d-aee1-cf9639ec1213",
+      "data": [
+        {
+          "text": "available "
+        },
+        {
+          "text": "conference",
+          "alias": "room-zone",
+          "meta": "@room-zone",
+          "userDefined": true
+        },
+        {
+          "text": " rooms"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "1cb41553-b13a-4aed-bdb3-a8b2498eaca1",
+      "data": [
+        {
+          "text": "available "
+        },
+        {
+          "text": "small conference rooms",
+          "alias": "room-zone",
+          "meta": "@room-zone",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "0f0f4046-8778-496c-9e07-4ce922582c65",
+      "data": [
+        {
+          "text": "available "
+        },
+        {
+          "text": "large conference rooms",
+          "alias": "room-zone",
+          "meta": "@room-zone",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "room.booking",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "required": true,
+          "dataType": "@room-zone",
+          "name": "room-zone",
+          "value": "$room-zone",
+          "prompts": [
+            "What type of room? select from Large Conference Room, Small Conference Room, Desk, Edit Room?"
+          ]
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "Room availability depends on the type and location."
+        }
+      ]
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "fallbackIntent": false
+}
