@@ -1,3 +1,2 @@
-web: python robin_booking_lookup.py
-# app.py
+web: python app.py
 
