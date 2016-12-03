@@ -1,8 +1,8 @@
 import requests
 import json
 
-spaceId = 'your space ID here'
-apiToken = 'your api token here'
+spaceId = '18184'
+apiToken = 'NkPxt41IvOLJC80dhKYsuWy0JGRB7wSZRKlbU3MSPSbkTrOtI5iO7caLbtaZQg1LPMIqoYFaMagpFgVu5370Mzjv5JUrdUf1yL2HdGSUW3lL1XaaSs8VMLeaZlz8hyIm'
 
 url = 'https://api.robinpowered.com/v1.0/spaces/{}/presence'.format(spaceId)
 
