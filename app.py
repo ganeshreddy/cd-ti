@@ -46,8 +46,6 @@ def makeWebhookResult(req):
 	    url,
 	    headers={'content-type':'application/json', 'Authorization': 'Access-Token {}'.format(apiToken)}
 	)
-
-    print(response.json())
 ###################################
     
     cost = {'Large Conference Room':'Conference Room 27NA, Conference Room 27S, Conference Rm 28NA, Conference Rm 28', 
@@ -67,7 +65,7 @@ def makeWebhookResult(req):
 
     return {
         "speech": speech,
-        "displayText": response,
+        "displayText": spaceId,
         #"data": {},
         # "contextOut": [],
         "source": "apiai-roombooking"
