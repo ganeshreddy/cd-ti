@@ -46,15 +46,15 @@ def makeWebhookResult(req):
             'Desk':'27D69, 27A23, 27D14',
            'Edit Room':'E-5A, E-6A, E-6C'}
 
-   # speech = "Available " + zone + " are " + str(cost[zone]) + "."
+    speech = "Available " + zone + " are " + str(cost[zone]) + "."
 
 # View all the presence in the space using Robin API
-response = requests.get( 
-	url,
-	headers={'content-type':'application/json', 'Authorization': 'Access-Token {}'.format(apiToken)}
-	)
+# response = requests.get( 
+#	url,
+#	headers={'content-type':'application/json', 'Authorization': 'Access-Token {}'.format(apiToken)}
+#	)
 
-print(response.json())
+#print(response.json())
 
 
     print("Response:")
