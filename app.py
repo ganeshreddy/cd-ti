@@ -59,7 +59,7 @@ def makeWebhookResult(req):
            'Edit Room':'E-5A, E-6A, E-6C'}
 
     speech = "Available " + zone + " are " + str(cost[zone]) + "."
-    speech = response.json()
+    speech = str(response.json())
     
     
     
