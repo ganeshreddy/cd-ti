@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 import urllib
-import requests
 import json
 import os
 
@@ -11,11 +10,6 @@ from flask import make_response
 
 # Flask app should start in global layout
 app = Flask(__name__)
-
-spaceId = '18184'
-apiToken = 'NkPxt41IvOLJC80dhKYsuWy0JGRB7wSZRKlbU3MSPSbkTrOtI5iO7caLbtaZQg1LPMIqoYFaMagpFgVu5370Mzjv5JUrdUf1yL2HdGSUW3lL1XaaSs8VMLeaZlz8hyIm'
-
-url = 'https://api.robinpowered.com/v1.0/spaces/{}/presence'.format(spaceId)
 
 
 @app.route('/webhook', methods=['POST'])
@@ -47,15 +41,6 @@ def makeWebhookResult(req):
            'Edit Room':'E-5A, E-6A, E-6C'}
 
     speech = "Available " + zone + " are " + str(cost[zone]) + "."
-
-# View all the presence in the space using Robin API
-# response = requests.get( 
-#	url,
-#	headers={'content-type':'application/json', 'Authorization': 'Access-Token {}'.format(apiToken)}
-#	)
-
-#print(response.json())
-
 
     print("Response:")
     print(speech)
