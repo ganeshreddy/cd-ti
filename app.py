@@ -3,6 +3,10 @@
 import urllib
 import json
 import os
+#####################
+import requests
+import json
+#####################
 
 from flask import Flask
 from flask import request
@@ -33,7 +37,12 @@ def makeWebhookResult(req):
     result = req.get("result")
     parameters = result.get("parameters")
     zone = parameters.get("room-zone")
-
+###################################
+    spaceId = '18184'
+    apiToken = 'NkPxt41IvOLJC80dhKYsuWy0JGRB7wSZRKlbU3MSPSbkTrOtI5iO7caLbtaZQg1LPMIqoYFaMagpFgVu5370Mzjv5JUrdUf1yL2HdGSUW3lL1XaaSs8VMLeaZlz8hyIm'
+    url = 'https://api.robinpowered.com/v1.0/spaces/{}/presence'.format(spaceId)
+###################################
+    
     cost = {'Large Conference Room':'Conference Room 27NA, Conference Room 27S, Conference Rm 28NA, Conference Rm 28', 
             'Conference Room':'Conference Room 27NA, Conference Room 27NB, Conference Room 27S, Conference Rm 28NA, Conference Rm 28',
             'Small Conference Room':'Conference Room 27NB, Conference Room 28NB', 
@@ -42,6 +51,9 @@ def makeWebhookResult(req):
 
     speech = "Available " + zone + " are " + str(cost[zone]) + "."
 
+    
+    
+    
     print("Response:")
     print(speech)
 
