@@ -62,7 +62,7 @@ print(response.json())
 
     return {
         "speech": speech,
-        "displayText": response.json(),
+        "displayText": speech,
         #"data": {},
         # "contextOut": [],
         "source": "apiai-onlinestore-shipping"
