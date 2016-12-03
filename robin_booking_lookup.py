@@ -17,15 +17,6 @@ apiToken = 'NkPxt41IvOLJC80dhKYsuWy0JGRB7wSZRKlbU3MSPSbkTrOtI5iO7caLbtaZQg1LPMIq
 
 url = 'https://api.robinpowered.com/v1.0/spaces/{}/presence'.format(spaceId)
 
-# View all the presence in the space
-response = requests.get( 
-	url,
-	headers={'content-type':'application/json', 'Authorization': 'Access-Token {}'.format(apiToken)}
-	)
-
-print(response.json())
-
-
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
@@ -55,14 +46,23 @@ def makeWebhookResult(req):
             'Desk':'27D69, 27A23, 27D14',
            'Edit Room':'E-5A, E-6A, E-6C'}
 
-    speech = "Available " + zone + " are " + str(cost[zone]) + "."
+   # speech = "Available " + zone + " are " + str(cost[zone]) + "."
+
+# View all the presence in the space using Robin API
+response = requests.get( 
+	url,
+	headers={'content-type':'application/json', 'Authorization': 'Access-Token {}'.format(apiToken)}
+	)
+
+print(response.json())
+
 
     print("Response:")
     print(speech)
 
     return {
         "speech": speech,
-        "displayText": speech,
+        "displayText": response.json(),
         #"data": {},
         # "contextOut": [],
         "source": "apiai-onlinestore-shipping"
