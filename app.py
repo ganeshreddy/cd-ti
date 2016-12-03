@@ -4,7 +4,7 @@ import urllib
 import json
 import os
 #####################
-#import requests
+import requests
 #####################
 
 from flask import Flask
