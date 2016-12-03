@@ -67,7 +67,7 @@ def makeWebhookResult(req):
 
     return {
         "speech": speech,
-        "displayText": response.json(),
+        "displayText": response,
         #"data": {},
         # "contextOut": [],
         "source": "apiai-roombooking"
