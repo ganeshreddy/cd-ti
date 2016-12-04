@@ -53,7 +53,7 @@ def makeWebhookResult(req):
         print 'No Data!'
     else:
         for rows in val['data']:
-            retntxt= retntxt + '\n' + rows['space']['name'] + ' (' + str(rows['space']['capacity']) + ' person capacity)'  + ', Location Id ' + str(rows['space']['location_id']) + ', Space Id ' + str(rows['space']['id'])
+            retntxt= retntxt + '\n\n' + rows['space']['name'] + ' (' + str(rows['space']['capacity']) + ' person capacity)'  + ', Location Id ' + str(rows['space']['location_id']) + ', Space Id ' + str(rows['space']['id'])
         
             print retntxt
 		
