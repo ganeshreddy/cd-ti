@@ -56,15 +56,14 @@ else:
         retntxt= retntxt + '\n' + rows['space']['name'] + ' (' + str(rows['space']['capacity']) + ' person capacity)'  + ', Location Id ' + str(rows['space']['location_id']) + ', Space Id ' + str(rows['space']['id'])
         
         print retntxt
-	#retntxt = str(retntxt.json())
-
+		
         return {
                     "speech": retntxt,
                     "displayText": retntxt,
                     #"data": {},
                     # "contextOut": [],
                     "source": "apiai-roombooking"
-                }
+		}
 
 
 if __name__ == '__main__':
