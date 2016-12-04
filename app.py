@@ -37,33 +37,33 @@ def makeWebhookResult(req):
     parameters = result.get("parameters")
     zone = parameters.get("room-zone")
 
-spaceId = '4495'
-apiToken = 'NkPxt41IvOLJC80dhKYsuWy0JGRB7wSZRKlbU3MSPSbkTrOtI5iO7caLbtaZQg1LPMIqoYFaMagpFgVu5370Mzjv5JUrdUf1yL2HdGSUW3lL1XaaSs8VMLeaZlz8hyIm'
+    spaceId = '4495'
+    apiToken = 'NkPxt41IvOLJC80dhKYsuWy0JGRB7wSZRKlbU3MSPSbkTrOtI5iO7caLbtaZQg1LPMIqoYFaMagpFgVu5370Mzjv5JUrdUf1yL2HdGSUW3lL1XaaSs8VMLeaZlz8hyIm'
 
-url = 'https://api.robinpowered.com/v1.0/free-busy/spaces?include=state&location_ids='+ spaceId
-# View all the presence in the space
-r = requests.get( 
-	url,
-	headers={'content-type':'application/json', 'Authorization': 'Access-Token {}'.format(apiToken)}
-	)
-val = json.loads(r.text)
+    url = 'https://api.robinpowered.com/v1.0/free-busy/spaces?include=state&location_ids='+ spaceId
+    # View all the presence in the space
+    r = requests.get( 
+	    url,
+	    headers={'content-type':'application/json', 'Authorization': 'Access-Token {}'.format(apiToken)}
+	    )
+    val = json.loads(r.text)
 
-retntxt = ''
-if val['data'] == []:
-    print 'No Data!'
-else:
-    for rows in val['data']:
-        retntxt= retntxt + '\n' + rows['space']['name'] + ' (' + str(rows['space']['capacity']) + ' person capacity)'  + ', Location Id ' + str(rows['space']['location_id']) + ', Space Id ' + str(rows['space']['id'])
+    retntxt = ''
+    if val['data'] == []:
+        print 'No Data!'
+    else:
+        for rows in val['data']:
+            retntxt= retntxt + '\n' + rows['space']['name'] + ' (' + str(rows['space']['capacity']) + ' person capacity)'  + ', Location Id ' + str(rows['space']['location_id']) + ', Space Id ' + str(rows['space']['id'])
         
-        print retntxt
+            print retntxt
 		
-        return {
-                    "speech": retntxt,
-                    "displayText": retntxt,
-                    #"data": {},
-                    # "contextOut": [],
-                    "source": "apiai-roombooking"
-		}
+    return {
+            "speech": retntxt,
+            "displayText": retntxt,
+            #"data": {},
+            # "contextOut": [],
+            "source": "apiai-roombooking"
+	    }
 
 
 if __name__ == '__main__':
