@@ -56,7 +56,7 @@ else:
         retntxt= retntxt + '\n' + rows['space']['name'] + ' (' + str(rows['space']['capacity']) + ' person capacity)'  + ', Location Id ' + str(rows['space']['location_id']) + ', Space Id ' + str(rows['space']['id'])
         
         print retntxt
-	    #retntxt = str(retntxt.json())
+	#retntxt = str(retntxt.json())
 
         return {
                     "speech": retntxt,
