@@ -49,13 +49,16 @@ def makeWebhookResult(req):
     val = json.loads(r.text)
 
     retntxt = ''
+    zone = 'Desk'	
+    
     if val['data'] == []:
         print 'No Data!'
     else:
         for rows in val['data']:
-            retntxt= retntxt + '\n\n' + rows['space']['name'] + ' (' + str(rows['space']['capacity']) + ' person capacity)'  + ', Location Id ' + str(rows['space']['location_id']) + ', Space Id ' + str(rows['space']['id'])
+		if zone.lower() in str(rows['space']['name'].lower()):
+		    retntxt= retntxt + rows['space']['type'] + ' type - ' + rows['space']['name'] + ' (' + str(rows['space']['capacity']) + ' person capacity)'  + ', Location Id ' + str(rows['space']['location_id']) + ', Space Id ' + str(rows['space']['id']) + '\n'        
         
-            print retntxt
+	            print retntxt
 		
     return {
             "speech": retntxt,
