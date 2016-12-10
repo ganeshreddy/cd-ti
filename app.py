@@ -49,7 +49,7 @@ def makeWebhookResult(req):
     val = json.loads(r.text)
 
     retntxt = ''
-    zone = 'Desk'	
+#    zone = 'Desk'	
     
     if val['data'] == []:
         print 'No Data!'
