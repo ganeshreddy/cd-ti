@@ -90,7 +90,7 @@ def makeWebhookResult(req):
     print url
         
     return {
-            "speech": retntxt,
+            "speech": url,
             "displayText": url,
             #"data": {},
             # "contextOut": [],
