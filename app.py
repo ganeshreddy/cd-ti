@@ -57,8 +57,8 @@ def makeWebhookResult(req):
         print 'No Data!'
     else:
         for rows in val['data']:
-        if zone.lower() in str(rows['space']['name'].lower()):
-            retntxt= zone + ' ' + retntxt + rows['space']['type'] + ' type - ' + rows['space']['name'] + ' (' + str(rows['space']['capacity']) + ' person capacity)'  + ', Location Id ' + str(rows['space']['location_id']) + ', Space Id ' + str(rows['space']['id']) + '\n'        
+            if zone.lower() in str(rows['space']['name'].lower()):
+                retntxt= zone + ' ' + retntxt + rows['space']['type'] + ' type - ' + rows['space']['name'] + ' (' + str(rows['space']['capacity']) + ' person capacity)'  + ', Location Id ' + str(rows['space']['location_id']) + ', Space Id ' + str(rows['space']['id']) + '\n'        
         
                 print retntxt
         
