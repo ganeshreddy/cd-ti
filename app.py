@@ -72,7 +72,7 @@ def makeWebhookResult(req):
         return {}
     result = req.get("result")
     parameters = result.get("parameters")
-    zone = parameters.get("room-zone")
+    #zone = parameters.get("room-zone")
     spaceid = parameters.get("id")
     #zone = 'Conference Room'   
     #spaceId = '4495'
@@ -95,7 +95,7 @@ def makeWebhookResult(req):
         for rows in val['data']:
             retntxt= zone + ' ' + retntxt + rows['space']['type'] + ' type - ' + rows['space']['name'] + ' (' + str(rows['space']['capacity']) + ' person capacity)'  + ', Location Id ' + str(rows['space']['location_id']) + ', Space Id ' + str(rows['space']['id']) + '\n'        
         
-    retntxt = "proc entered"   
+    retntxt = r.json()  
     print retntxt
         
     return {
