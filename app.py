@@ -31,7 +31,7 @@ def webhook():
     return r
 
 def makeWebhookResult(req):
-    if req.get("result").get("action") != "room.availability":
+    if req.get("result").get("action") != "room.book":
         return {}
     result = req.get("result")
     parameters = result.get("parameters")
@@ -54,7 +54,7 @@ def makeWebhookResult(req):
     else:
         for rows in val['data']:
 		if zone.lower() in str(rows['space']['name'].lower()):
-		    retntxt= zone + ' ' + retntxt + rows['space']['type'] + ' type - ' + rows['space']['name'] + ' (' + str(rows['space']['capacity']) + ' person capacity)'  + ', Location Id ' + str(rows['space']['location_id']) + ', Space Id ' + str(rows['space']['id']) + '\n'        
+		    retntxt= retntxt + rows['space']['type'] + ' type - ' + rows['space']['name'] + ' (' + str(rows['space']['capacity']) + ' person capacity)'  + ', Location Id ' + str(rows['space']['location_id']) + ', Space Id ' + str(rows['space']['id']) + '\n'        
         
 	            print retntxt
 		
