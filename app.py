@@ -71,7 +71,7 @@ def makeWebhookResult(req):
     if req.get("result").get("action") != "room.book":
         return {}
     result = req.get("result")
-    parameters = result.get("parameters")
+    #parameters = result.get("parameters")
     params = {"id": "18185", "ended_at": "2016-12-11T19:00:00Z", "started_at": "2016-12-11T18:00:00Z", "title": "scheduled from API 1.0", "user_ref": "50078"}
     #zone = parameters.get("room-zone")
     spaceid = 18185 #parameters.get("id")
