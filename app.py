@@ -31,7 +31,7 @@ def webhook():
     return r
 
 def makeWebhookResult(req):
-    if req.get("result").get("action") != "room.availability":
+"""    if req.get("result").get("action") != "room.availability":
         return {}
     result = req.get("result")
     parameters = result.get("parameters")
@@ -66,39 +66,39 @@ def makeWebhookResult(req):
             # "contextOut": [],
             "source": "apiai-roombooking"
         }
-
+"""
 #####################################
-    if req.get("result").get("action") == "room.book":
-    
-        result = req.get("result")
+    if req.get("result").get("action") != "room.book":
+        return {}
+    result = req.get("result")
     #parameters = result.get("parameters")
-        params = {"id": "18185", "ended_at": "2016-12-11T19:00:00Z", "started_at": "2016-12-11T18:00:00Z", "title": "scheduled from API 1.0", "user_ref": "50078"}
+    params = {"id": "18185", "ended_at": "2016-12-11T19:00:00Z", "started_at": "2016-12-11T18:00:00Z", "title": "scheduled from API 1.0", "user_ref": "50078"}
     #zone = parameters.get("room-zone")
-        spaceid = 18185 #parameters.get("id")
+    spaceid = 18185 #parameters.get("id")
     #zone = 'Conference Room'   
     #spaceId = '4495'
-        apiToken = 'NkPxt41IvOLJC80dhKYsuWy0JGRB7wSZRKlbU3MSPSbkTrOtI5iO7caLbtaZQg1LPMIqoYFaMagpFgVu5370Mzjv5JUrdUf1yL2HdGSUW3lL1XaaSs8VMLeaZlz8hyIm'
+    apiToken = 'NkPxt41IvOLJC80dhKYsuWy0JGRB7wSZRKlbU3MSPSbkTrOtI5iO7caLbtaZQg1LPMIqoYFaMagpFgVu5370Mzjv5JUrdUf1yL2HdGSUW3lL1XaaSs8VMLeaZlz8hyIm'
 
-        url = 'https://api.robinpowered.com/v1.0/spaces/'+ spaceid + '/events'
+    url = 'https://api.robinpowered.com/v1.0/spaces/'+ spaceid + '/events'
     # View all the presence in the space
-        r = requests.post( 
-            url,
-            params=params, 
-            headers={'content-type':'application/json', 'Authorization': 'Access-Token {}'.format(apiToken)}
-            )
+    r = requests.post( 
+        url,
+        params=params, 
+        headers={'content-type':'application/json', 'Authorization': 'Access-Token {}'.format(apiToken)}
+        )
     
-        retntxt = r.json()  
-        print url
-        print result
-        print parameters
-            
-        return {
-                "speech": url,
-                "displayText": url,
-                #"data": {},
-                # "contextOut": [],
-                "source": "apiai-roombooking"
-            }    
+    retntxt = r.json()  
+    print url
+    print result
+    print parameters
+        
+    return {
+            "speech": url,
+            "displayText": url,
+            #"data": {},
+            # "contextOut": [],
+            "source": "apiai-roombooking"
+        }    
 ##################################### 
 
 if __name__ == '__main__':
