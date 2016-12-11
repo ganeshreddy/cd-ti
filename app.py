@@ -88,6 +88,8 @@ def makeWebhookResult(req):
     
     retntxt = r.json()  
     print url
+    print result
+    print parameters
         
     return {
             "speech": url,
