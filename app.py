@@ -82,7 +82,7 @@ def makeWebhookResult(req):
     # View all the presence in the space
     r = requests.post( 
         url,
-        headers={'content-type':'application/json', 'Authorization': 'Access-Token {}'.format(apiToken)}
+        headers={'content-type':'application/json', 'params':'parameters', 'Authorization': 'Access-Token {}'.format(apiToken)}
         )
     
     retntxt = r.json()  
