@@ -32,9 +32,7 @@ def webhook():
 
 def makeWebhookResult(req):
     if req.get("result").get("action") != "room.availability":
-#        return {}
-        elif req.get("result").get("action") != "room.book":    
-            return {}
+        return {}
     result = req.get("result")
     parameters = result.get("parameters")
     zone = parameters.get("room-zone")
@@ -51,8 +49,26 @@ def makeWebhookResult(req):
     val = json.loads(r.text)
 
     retntxt = ''
-#    zone = 'Desk'  
-    
+#####################################
+    if req.get("result").get("action") != "room.book":
+        return {}
+    result = req.get("result")
+    parameters = result.get("parameters")
+    zone = parameters.get("room-zone")
+    #zone = 'Conference Room'   
+    spaceId = '4495'
+    apiToken = 'NkPxt41IvOLJC80dhKYsuWy0JGRB7wSZRKlbU3MSPSbkTrOtI5iO7caLbtaZQg1LPMIqoYFaMagpFgVu5370Mzjv5JUrdUf1yL2HdGSUW3lL1XaaSs8VMLeaZlz8hyIm'
+
+    url = 'https://api.robinpowered.com/v1.0/free-busy/spaces?include=state&location_ids='+ spaceId
+    # View all the presence in the space
+    r = requests.get( 
+        url,
+        headers={'content-type':'application/json', 'Authorization': 'Access-Token {}'.format(apiToken)}
+        )
+    val = json.loads(r.text)
+
+    retntxt = ''
+#####################################    
     if val['data'] == []:
         print 'No Data!'
     else:
