@@ -72,10 +72,10 @@ def makeWebhookResult(req):
     if req.get("result").get("action") != "room.book":
         return {}
     result = req.get("result")
-    #parameters = result.get("parameters")
-    params = {"id": "18185", "ended_at": "2016-12-11T19:00:00Z", "started_at": "2016-12-11T18:00:00Z", "title": "scheduled from API 1.0", "user_ref": "50078"}
+    parameters = result.get("parameters")
+    #params = {"id": "18185", "ended_at": "2016-12-11T19:00:00Z", "started_at": "2016-12-11T18:00:00Z", "title": "scheduled from API 1.0", "user_ref": "50078"}
     #zone = parameters.get("room-zone")
-    spaceid = 18185 #parameters.get("id")
+    spaceid = parameters.get("id")
     #zone = 'Conference Room'   
     #spaceId = '4495'
     apiToken = 'NkPxt41IvOLJC80dhKYsuWy0JGRB7wSZRKlbU3MSPSbkTrOtI5iO7caLbtaZQg1LPMIqoYFaMagpFgVu5370Mzjv5JUrdUf1yL2HdGSUW3lL1XaaSs8VMLeaZlz8hyIm'
@@ -84,7 +84,7 @@ def makeWebhookResult(req):
     # View all the presence in the space
     r = requests.post( 
         url,
-        params=params, 
+        params=parameters, 
         headers={'content-type':'application/json', 'Authorization': 'Access-Token {}'.format(apiToken)}
         )
     
