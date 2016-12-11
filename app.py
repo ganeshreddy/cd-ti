@@ -71,17 +71,18 @@ def makeWebhookResult(req):
     if req.get("result").get("action") != "room.book":
         return {}
     result = req.get("result")
-    #parameters = result.get("parameters")
+    parameters = result.get("parameters")
     #zone = parameters.get("room-zone")
     spaceid = parameters.get("id")
     #zone = 'Conference Room'   
     #spaceId = '4495'
     apiToken = 'NkPxt41IvOLJC80dhKYsuWy0JGRB7wSZRKlbU3MSPSbkTrOtI5iO7caLbtaZQg1LPMIqoYFaMagpFgVu5370Mzjv5JUrdUf1yL2HdGSUW3lL1XaaSs8VMLeaZlz8hyIm'
 
-    url = 'https://api.robinpowered.com/v1.0/spaces/18184/events'
+    url = 'https://api.robinpowered.com/v1.0/spaces/'+ spaceid + '/events'
     # View all the presence in the space
     r = requests.post( 
         url,
+        params=parameters, 
         headers={'content-type':'application/json', 'Authorization': 'Access-Token {}'.format(apiToken)}
         )
     
