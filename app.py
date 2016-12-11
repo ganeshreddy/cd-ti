@@ -31,6 +31,7 @@ def webhook():
     return r
 
 def makeWebhookResult(req):
+"""
     if req.get("result").get("action") != "room.availability":
         return {}
     result = req.get("result")
@@ -66,7 +67,7 @@ def makeWebhookResult(req):
             # "contextOut": [],
             "source": "apiai-roombooking"
         }
-
+"""
 #####################################
     if req.get("result").get("action") != "room.book":
         return {}
