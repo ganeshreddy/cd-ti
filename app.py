@@ -32,6 +32,7 @@ def webhook():
 
 def makeWebhookResult(req):
     if req.get("result").get("action") != "room.availability":
+        return {}
         result = req.get("result")
     parameters = result.get("parameters")
     zone = parameters.get("room-zone")
@@ -67,6 +68,7 @@ def makeWebhookResult(req):
         }
 
     if req.get("result").get("action") != "room.book":
+        return {}    
         result = req.get("result")
     parameters = result.get("parameters")
     zone = parameters.get("room-zone")
