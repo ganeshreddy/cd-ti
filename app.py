@@ -91,11 +91,10 @@ def makeWebhookResult(req):
     retntxt = r.json()  
     print url
     print result
-    print parameters
         
     return {
-            "speech": url,
-            "displayText": url,
+            "speech": retntxt,
+            "displayText": retntxt,
             #"data": {},
             # "contextOut": [],
             "source": "apiai-roombooking"
