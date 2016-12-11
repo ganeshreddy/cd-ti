@@ -73,7 +73,7 @@ def makeWebhookResult(req):
     result = req.get("result")
     parameters = result.get("parameters")
     #zone = parameters.get("room-zone")
-    spaceid = parameters.get("id")
+    spaceid = 18184 #parameters.get("id")
     #zone = 'Conference Room'   
     #spaceId = '4495'
     apiToken = 'NkPxt41IvOLJC80dhKYsuWy0JGRB7wSZRKlbU3MSPSbkTrOtI5iO7caLbtaZQg1LPMIqoYFaMagpFgVu5370Mzjv5JUrdUf1yL2HdGSUW3lL1XaaSs8VMLeaZlz8hyIm'
