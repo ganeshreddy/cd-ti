@@ -50,7 +50,7 @@ def makeWebhookResult(req):
 
     retntxt = ''
 #####################################
-    if req.get("result").get("action") != "room.book":
+"""    if req.get("result").get("action") != "room.book":
         return {}
     result = req.get("result")
     parameters = result.get("parameters")
@@ -68,6 +68,7 @@ def makeWebhookResult(req):
     val = json.loads(r.text)
 
     retntxt = ''
+"""    
 #####################################    
     if val['data'] == []:
         print 'No Data!'
