@@ -85,8 +85,17 @@ def makeWebhookResult(req):
         headers={'content-type':'application/json', 'Authorization': 'Access-Token {}'.format(apiToken)}
         )
     
-    retntxt = r.text
-    print retntxt
+    val = json.loads(r.text)
+
+    retntxt = ''
+
+    if val['data'] == []:
+        print 'No Data!'
+    else:
+        for rows in val['data']:
+            retntxt= zone + ' ' + retntxt + rows['space']['type'] + ' type - ' + rows['space']['name'] + ' (' + str(rows['space']['capacity']) + ' person capacity)'  + ', Location Id ' + str(rows['space']['location_id']) + ', Space Id ' + str(rows['space']['id']) + '\n'        
+        
+            print retntxt
         
     return {
             "speech": retntxt,
