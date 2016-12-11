@@ -71,7 +71,7 @@ def makeWebhookResult(req):
     if req.get("result").get("action") != "room.book":
         return {}
     result = req.get("result")
-    parameters = result.get("parameters")
+    #parameters = result.get("parameters")
     #zone = parameters.get("room-zone")
     spaceid = parameters.get("id")
     #zone = 'Conference Room'   
@@ -82,7 +82,7 @@ def makeWebhookResult(req):
     # View all the presence in the space
     r = requests.post( 
         url,
-        headers={'content-type':'application/json', 'params':'parameters', 'Authorization': 'Access-Token {}'.format(apiToken)}
+        headers={'content-type':'application/json', 'Authorization': 'Access-Token {}'.format(apiToken)}
         )
     
     retntxt = r.json()  
