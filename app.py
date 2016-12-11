@@ -32,7 +32,7 @@ def webhook():
 
 def makeWebhookResult(req):
     if req.get("result").get("action") != "room.availability":
-        return {}
+#        return {}
     elif req.get("result").get("action") != "room.book":    
         return {}
     result = req.get("result")
